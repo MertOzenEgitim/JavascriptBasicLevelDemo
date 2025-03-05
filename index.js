@@ -1,166 +1,113 @@
-// var number=10;
-// //var number=40;
-// {
-// let score=20;
-// }
-// let score=20;
-// const PI=3.14;
-
-// score=30;
-
-// //PI=2.23;
-
-// console.log(number);
-// console.log(score);
-// //console.log(number2);
-
-// function getName(){
-//     let firstName="mert";
-//     return firstName;
+//Koşul İfadeleri
+//if,else if,else
+//let sayi=0;
+//let sayi=10;
+//let sayi=-10;
+// if(sayi>0){
+//     console.log("Sayı pozitiftir.");
+// }else if(sayi<0){
+//     console.log("Sayı negatiftir.");
+// }else{
+//     console.log("Sayı sıfırdır.");
 // }
 
-// let firstName="mehmet";
+//switch-case
+// let day=3;
+// switch(day){
+//     case 0:
+//         console.log("Pazar");
+//         break;
+//     case 1:
+//         console.log("Pazartesi");
+//         break;
+//     case 2:
+//         console.log("Salı");
+//         break;
+//     case 3:
+//         console.log("Çarşamba");
+//         break;
+//     case 4:
+//         console.log("Perşembe");
+//         break;
+//     case 5:
+//         console.log("Cuma");
+//         break;
+//     case 6:
+//         console.log("Cumartesi");   
+//         break; 
+//     default:
+//         console.log("Geçersiz gün");
+// }
 
-// console.log(getName());
-// console.log(firstName);
+//Döngüler
+//for
+// for(let i=1;i<=5;i++){
+//     console.log("Adım:"+i);
+// }
+// for(let i=1;i<=5;i+=2){
+//     console.log("Adım:"+i);
+// }
+// for(let i=1;i<5;i+=2){
+//     console.log("Adım:"+i);
+// }
+
+//while
+// let sayac=0;
+// while(sayac<5){
+//     // sayac++;   
+//     console.log("Sayac:"+sayac); 
+//     sayac++;   
+// }
+
+//do..while
+// let x=0;
+// do{
+//     console.log("Value:"+x);
+//     x++;
+// }while(x<5);
+
+//break
+// for(let i=0;i<10;i++){
+//     if(i==5){        
+//         break;
+//     }
+//     console.log(i);
+// }
+
+//continue
+// for(let i=0;i<10;i++){
+//     if(i%2==0){
+//         continue;
+//     }
+//     console.log(i);
+// }
+// for(let i=0;i<10;i++){
+//     if(i%2!=0){
+//         console.log(i);
+//     }    
+// }
+
+//for..in
+// let person={firstName:"Mert",age:30};
+// for(let prop in person){
+//     console.log(prop+": "+person[prop]);
+// }
 
 
-//---İlkel Veri Tipleri
-//1-String
-let message="Merhaba";
-let message2='Merhaba2';
-console.log(message);
-console.log(message2);
+//for..of
+// let names=["Mert","Mehmet","Mesut"];
+// for(let nameItem of names){
+//     console.log(nameItem);
+// }
 
-//2-Number
-let age=30;
-let price=19.99;
-let negative=-10;
-
-console.log(age);
-console.log(price);
-console.log(negative);
-
-//3-Boolean
-let isHungry=false;
-isHungry=true;
-console.log(isHungry);
-
-//4-Null
-let emptyValue=null;
-console.log(emptyValue);
-
-//5-Undefined
-let uninitialized;
-console.log(uninitialized);
-
-//6-Symbol
-const ID=Symbol("id");
-const user={
-    name:"Mert",
-    [ID]:1234
+//scope
+// for(var i=0;i<3;i++){
+//     setTimeout(() => {
+//         console.log(i);
+//     }, 1000);
+// }
+for(let i=0;i<3;i++){
+    setTimeout(() => {
+        console.log(i);
+    }, 1000);
 }
-
-//7-BigInt
-console.log(Number.MAX_SAFE_INTEGER);
-let bigNumber=9007199254740991n;
-let bigNumber2=BigInt(9007199254740991);
-console.log(bigNumber);
-console.log(bigNumber2);
-
-//NOT: NaN: Not a Number
-console.log(0/0);
-console.log(2*"m");
-
-//Truthy ve Falsy
-//--Falsy
-//false
-//0
-//""
-//null
-//undefined
-//NaN
-let value1=0;
-let value2="";
-let value3=null;
-
-//if(value1){
-//if(value2){
-if(value3){
-    console.log("value1 truthy");
-}else{
-    console.log("value1 falsy");
-}
-
-//--Truthy
-//true
-//1,-1,100 gibi sayılar
-//"hello"
-//[]
-//{}
-//function(){}
-
-let value4="Merhaba";
-let value5=[];
-let value6=function(){};
-
-//if(value4){
-//if(value5){
-if(value6){
-    console.log("value1 truthy");
-}else{
-    console.log("value1 falsy");
-}
-
-//-Operatörler
-//--Aritmetik Operatörler
-console.log(5+3);
-console.log(5-3);
-console.log(5*3);
-console.log(5/3);
-console.log(5%3);
-console.log(5**3);
-
-//--Karşılaştırma Operatörleri
-console.log(5=="5"); //true
-console.log(5==="5"); //false
-console.log(5!=3); //true
-console.log(5!==5); //false
-console.log(5!=="5"); //true
-console.log(5>3); //true
-console.log(5<3); //false
-console.log(5>=5); //true
-console.log(5<=5); //true
-
-//--Mantıksal Operatörler
-//&& (ve) - iki şart gerçekleşmeli
-//|| (veya) - iki şarttan biri gerçekleşse yeterli
-//! (değili) - şartın tersi benim için kabul
-let firstName="mert";
-let lastName="özen";
-let isAdmin=false;
-
-if(firstName=="mert" && lastName=="özen"){
-    console.log("giriş başarılı");
-}
-if(firstName=="mert" || firstName=="mehmet" || firstName=="mesut"){
-    console.log("giriş başarılı");
-}
-
-if(!isAdmin){
-    console.log("admin değil");
-}
-
-//--Atama Operatörleri
-//= -> değer atama
-//+= -> toplayarak atama
-//-= -> çıkararak atama
-//*= ->çarparak atama
-// /= -> bölerek atama
-
-let customerAge=30;
-customerAge=customerAge+3;
-console.log(customerAge);
-customerAge+=3;
-console.log(customerAge);
-
