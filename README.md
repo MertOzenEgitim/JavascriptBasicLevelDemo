@@ -28,3 +28,12 @@
 * * for,while,do..while
 * * döngü kontrol ifadeleri: break, continue
 * * for..in (ES3), for..of(ES6)
+
+## 4.Fonksiyonlar
+* Fonksiyon tanımlamaları ve ifadeleri
+* * Function Declaration, Function Expression, IIFE
+* Arguments
+* Fonksiyon Kullanımı
+* * Parametreler, geri dönüş değerleri (default, return, rest, spread)
+* Ok (Arrow) Fonksiyonlar
+* Callback Function
