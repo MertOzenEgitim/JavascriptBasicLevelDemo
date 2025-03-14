@@ -1,113 +1,156 @@
-//Koşul İfadeleri
-//if,else if,else
-//let sayi=0;
-//let sayi=10;
-//let sayi=-10;
-// if(sayi>0){
-//     console.log("Sayı pozitiftir.");
-// }else if(sayi<0){
-//     console.log("Sayı negatiftir.");
-// }else{
-//     console.log("Sayı sıfırdır.");
+//sayHello();
+//Function Declaration
+// function sayHello(){
+//     console.log("Merhaba");
 // }
 
-//switch-case
-// let day=3;
-// switch(day){
-//     case 0:
-//         console.log("Pazar");
-//         break;
-//     case 1:
-//         console.log("Pazartesi");
-//         break;
-//     case 2:
-//         console.log("Salı");
-//         break;
-//     case 3:
-//         console.log("Çarşamba");
-//         break;
-//     case 4:
-//         console.log("Perşembe");
-//         break;
-//     case 5:
-//         console.log("Cuma");
-//         break;
-//     case 6:
-//         console.log("Cumartesi");   
-//         break; 
-//     default:
-//         console.log("Geçersiz gün");
+//sayHello();
+
+//sayHello3();
+
+//Function Expression
+// const sayHello2=function(){
+//     console.log("Merhaba");
+// };
+// var sayHello3=function(){
+//     console.log("Merhaba");
+// };
+
+//sayHello2();
+
+
+//hoisting
+// console.log(x);
+// console.log(y);
+// var x="x";
+// let y="y";
+
+//IIFE
+// (function(){
+
+//     let firstName="Mert";
+//     console.log(firstName);
+
+// })();
+
+//Fonksiyonlarda Parametreler ve Geri Dönüş Değerleri
+// function sum(num1,num2){
+//     console.log(num1+num2);
 // }
 
-//Döngüler
-//for
-// for(let i=1;i<=5;i++){
-//     console.log("Adım:"+i);
-// }
-// for(let i=1;i<=5;i+=2){
-//     console.log("Adım:"+i);
-// }
-// for(let i=1;i<5;i+=2){
-//     console.log("Adım:"+i);
+//sum(2,3);
+
+// (function(num1,num2){
+//     console.log(num1+num2);
+// })(2,5);
+
+//->arguments
+
+// function multiply(){
+//     console.log(arguments[0]*arguments[1]);
 // }
 
-//while
-// let sayac=0;
-// while(sayac<5){
-//     // sayac++;   
-//     console.log("Sayac:"+sayac); 
-//     sayac++;   
+//multiply(8,9);
+
+// function getFullName(){
+//     console.log(arguments[0]+" "+arguments[1]);
 // }
 
-//do..while
-// let x=0;
-// do{
-//     console.log("Value:"+x);
-//     x++;
-// }while(x<5);
+// getFullName("mert","özen");
 
-//break
-// for(let i=0;i<10;i++){
-//     if(i==5){        
-//         break;
+// function getFullName(firstName,lastName){
+//     console.log(firstName+" "+lastName);
+// }
+
+// getFullName("mert","özen");
+
+//->Varsayılan Parametreler
+// function getGreet(fullName="Ziyaretçi"){
+//     console.log("Merhaba,"+fullName);
+// }
+
+// getGreet();
+// getGreet("Mert Özen");
+
+//->Geri Dönüş Değeri Olan Fonksiyonlar
+// function subtract(num1,num2){
+//     return num1-num2;
+// }
+
+// console.log("Sonuç:",subtract(2,1));
+
+//->rest operator
+// function sum(...numbers){
+//     let totalValue=0;
+//     for(number of numbers){
+//         totalValue+=number;
 //     }
-//     console.log(i);
+//     return totalValue;
 // }
 
-//continue
-// for(let i=0;i<10;i++){
-//     if(i%2==0){
-//         continue;
-//     }
-//     console.log(i);
+// console.log(sum(3,98,74,5,2));
+
+//->spread operator
+// function sum(num1,num2,num3){    
+//     return num1+num2+num3;
 // }
-// for(let i=0;i<10;i++){
-//     if(i%2!=0){
-//         console.log(i);
-//     }    
+// const numbers=[3,5,7];
+// console.log(sum(...numbers));
+
+//OK(Arrow) Fonkisyonları (ES6)
+// const sayHello=()=>{
+//     console.log("Merhaba");
+// };
+
+// sayHello();
+
+// const sayHello=(fullName="Ziyaretçi")=>{
+//     console.log("Merhaba,"+fullName);
+// };
+
+// sayHello("Mert");
+// sayHello();
+
+// const sum=(num1,num2)=>{
+//     return num1+num2;
+// };
+
+// const sum=(num1,num2)=>num1+num2;
+
+// console.log(sum(3,4));
+
+//Callback Function
+
+// function process(a,b,callback){
+//     //islemler
+//     return callback(a,b);
 // }
 
-//for..in
-// let person={firstName:"Mert",age:30};
-// for(let prop in person){
-//     console.log(prop+": "+person[prop]);
-// }
+// const toplam=process(3,5,(x,y)=>x+y);
+// const toplam=process(3,5,function(x,y){
+//     return x+y;
+// });
+// console.log(toplam);
 
+function getUserInfo(userId,callback){
+    console.log("Kullanıcı bilgileri alınıyor");
 
-//for..of
-// let names=["Mert","Mehmet","Mesut"];
-// for(let nameItem of names){
-//     console.log(nameItem);
-// }
-
-//scope
-// for(var i=0;i<3;i++){
-//     setTimeout(() => {
-//         console.log(i);
-//     }, 1000);
-// }
-for(let i=0;i<3;i++){
     setTimeout(() => {
-        console.log(i);
+        const user={
+            id:userId,
+            name:"mert",
+            yas:30
+        };
+
+        callback(user);
     }, 1000);
 }
+
+
+function writeUserInfo(user){
+    console.log("Id:"+user.id);
+    console.log("Ad:"+user.name);
+    console.log("Yaş:"+user.yas);
+}
+
+getUserInfo(1,writeUserInfo);
