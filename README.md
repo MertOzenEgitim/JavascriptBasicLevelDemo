@@ -37,3 +37,13 @@
 * * Parametreler, geri dönüş değerleri (default, return, rest, spread)
 * Ok (Arrow) Fonksiyonlar
 * Callback Function
+
+## 5.Nesneler ve Diziler
+* Nesneler
+* * nesne söz dizimi
+* * property erişimi,
+* * metotlar ve this
+* Diziler
+* * dizi oluşturma
+* * temel metotlar (push,pop,shift,unshift)
+* * döngü ile dizi elemanlarina erisim (for,foreach,map)
