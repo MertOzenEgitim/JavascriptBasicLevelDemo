@@ -47,3 +47,11 @@
 * * dizi oluşturma
 * * temel metotlar (push,pop,shift,unshift)
 * * döngü ile dizi elemanlarina erisim (for,foreach,map)
+
+## 6.JSON (Javascript Object Notation)
+* JSON Nedir?
+* * JSON'un veri değişim formatı olarak kullanımı
+* * Temel sözdizimi, veri tipleri (object,array,string,number,boolean,null)
+* JSON ile Çalışma
+* * JSON.stringify() ve JSON.parse() metotları
+* * JSON veri formatının API'ler ver veri alışverişindeki rolü
