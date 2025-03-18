@@ -55,3 +55,12 @@
 * JSON ile Çalışma
 * * JSON.stringify() ve JSON.parse() metotları
 * * JSON veri formatının API'ler ver veri alışverişindeki rolü
+
+## 7.String İşlemleri ve Düzenli İfadeler (RegEx)
+* String İşlemleri
+* * Temel metotlar: length, indexOf, slice, substring,replace,toUpperCase,toLowerCase,split,concat
+* * Template Literals ile dinamik string oluşturma
+* Düzenli İfadeler (RegEx)
+* * RegEx nedir, literal ve RegExp nesnesi oluşturma
+* * Flagler: g, i, m
+* * Metotlar: test(), exec(), match(), matchAll(), search(), replace(), replaceAll(), split()
