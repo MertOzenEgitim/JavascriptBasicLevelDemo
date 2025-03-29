@@ -64,3 +64,11 @@
 * * RegEx nedir, literal ve RegExp nesnesi oluşturma
 * * Flagler: g, i, m
 * * Metotlar: test(), exec(), match(), matchAll(), search(), replace(), replaceAll(), split()
+
+## 8.Document Object Model (DOM)
+* DOM Nedir?
+* Belge yapısına erişim (Document)
+* Window ve Document Arasındaki Fark
+* Element seçimi (ID, class, querySelector)
+* Element ekleme, silme, içerik güncelleme
+* Event listener’lar ile etkileşim

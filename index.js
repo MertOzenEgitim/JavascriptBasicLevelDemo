@@ -1,77 +1,87 @@
-let metin="Merhaba, dünya!";
+//Belge Yapısına Erişim
+//document
 
-//String İşlemler
-//1-length
-console.log(metin.length);
+// console.log(document);
+// console.log(document.documentElement);
+// console.log(document.head);
+// console.log(document.body);
+// console.log(document.title);
+// console.log(document.URL);
+// document.body.innerHTML="<h1>Merhaba</h1>";
 
-//2-indexOf()
-console.log(metin.indexOf("dünya"));
-console.log(metin[9]);
+//window
+// console.log(window);
+// console.log(document);
+// console.log(window.document);
+// console.log(window.innerWidth);
+// console.log(window.innerHeight);
+// window.alert("Merhaba");
+// console.log(window.location.href);
 
-//3-slice()
-console.log(metin.slice(0,7));
-console.log(metin.slice(-6));
+// Element Seçimi-Tag
+// let h1=document.getElementsByTagName("h1");
+// console.log(h1);
+// console.log(h1[0]);
+// console.log(h1[0].innerText);
 
-//4-substring()
-console.log(metin.substring(0,4));
-console.log(metin.substring(4,0));
+// Element Seçimi-Id
+// let h2=document.getElementById("title");
+// console.log(h2);
+// console.log(h2.innerText);
+// console.log(h2.innerHTML);
 
-//5-replace()
-console.log(metin.replace("dünya","JavaScript"));
-console.log(metin);
+// Element Seçimi-Class
+// let country=document.getElementsByClassName("country");
+// console.log(country);
+// console.log(country[0]);
 
-//6-toUpperCase ve toLowerCase()
-console.log(metin.toLowerCase());
-console.log(metin.toUpperCase());
+// Element Seçimi-QuerySelector
+// let htmlElement=document.querySelector("h2");
+// console.log(htmlElement);
+// htmlElement=document.querySelector("#title");
+// console.log(htmlElement);
+// htmlElement=document.querySelector("p");
+// console.log(htmlElement);
+// htmlElement=document.querySelector(".content");
+// console.log(htmlElement);
+// htmlElement=document.querySelectorAll(".content");
+// console.log(htmlElement);
 
-//7-split()
-console.log(metin.split(" "));
+// htmlElement.forEach(element => {
+//     console.log(element.innerText);
+// });
 
-//8-concat()
-let metin2="Merhaba"
-let metin3="Dünya";
-console.log(metin2.concat(",",metin3,"!"));
+//Element Ekleme, Silme ve Güncelleme
+// let newP=document.createElement("p");
+// newP.innerText="Bu yeni eklenen bir paragraftır!";
+// document.body.appendChild(newP);
+// console.log(newP.innerText);
+// newP.innerText="Güncellendi";
+// console.log(newP.innerText);
+// newP.innerHTML="<span>Deneme</span>";
+// console.log(newP.innerHTML);
+// console.log(newP.innerText);
 
-//Template Literals
-let firstName="Mert";
-let age=30;
-console.log(`Merhaba, benim adım ${firstName}, ${age} yaşındayım.`);
+// newP.remove();
 
-//Düzenli İfadeler (RegEx)
-//->literal
-let regex=/merhaba/;
-//->RegExp nesnesi
-let regex2=new RegExp("merhaba");
+//Event Listener'lar ile Etkileşim
+// document.getElementsByTagName("button")[0];
+let button=document.querySelector("button");
 
-let metin4="Java, Javascript birbirinden farklı dillerdir."
-//->g:global arama(tüm eşleşmeleri bulur)
-//->i:büyük/küçük harf duyarsız
-//->m:çok satırlı arama
-let regex3=/java/gi;
+// button.addEventListener("click",function(){
 
-//->RegEx Metotları
-//1-test()
-console.log(regex3.test(metin4));
-//2-exec()
-console.log(regex3.exec(metin4));
-//3-match()
-console.log(metin4.match(regex3));
-//4-matchAll()
-let matchingItems=metin4.matchAll(regex3);
-for(let matchItem of matchingItems){
-    console.log(matchItem);
+//     document.getElementsByTagName("h1")[0].innerText="Merhaba İstanbul!";
+
+// });
+
+button.addEventListener("click",buttonClick);
+
+button.addEventListener("mouseover",function(){
+
+    document.getElementsByTagName("h1")[0].innerText="Merhaba Türkiye!";
+    this.removeEventListener("click",buttonClick);
+});
+
+function buttonClick(){
+    document.getElementsByTagName("h1")[0].innerText="Merhaba İstanbul!";
 }
-//5-search()
-console.log(metin4.search(regex3));
-//6-replace()
-console.log(metin4.replace("Java","java"));
-console.log(metin4.replace(regex3,"java"));
-//7-replaceAll()
-console.log(metin4.replaceAll(regex3,"java"));
-//8-split()
-console.log(metin4.split(/,/));
-
-let email="mertozensoru@gmail.com";
-let emailRegex=/([\w\.]+)@([\w\.]+)\.(\w+)/g;
-
-console.log(emailRegex.test(email));
