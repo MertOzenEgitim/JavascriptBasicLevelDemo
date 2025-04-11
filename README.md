@@ -72,3 +72,14 @@
 * Element seçimi (ID, class, querySelector)
 * Element ekleme, silme, içerik güncelleme
 * Event listener’lar ile etkileşim
+
+## 9.Browser Object Model (BOM)
+* BOM Nedir?
+* * Tarayıcıya özgü nesneler ve özellikler
+* Temel BOM Konuları:
+* * `Window Nesnesi:` alert, prompt, confirm
+* * `Navigator:` Tarayıcı bilgileri
+* * `Location:` URL yönetimi, yönlendirme, reload
+* * `History:` Geçmişte gezinme, ileri/geri butonları
+* * `Screen:` Ekran bilgileri
+
