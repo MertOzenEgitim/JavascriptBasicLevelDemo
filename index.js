@@ -1,87 +1,50 @@
-//Belge Yapısına Erişim
-//document
-
-// console.log(document);
-// console.log(document.documentElement);
-// console.log(document.head);
-// console.log(document.body);
-// console.log(document.title);
-// console.log(document.URL);
-// document.body.innerHTML="<h1>Merhaba</h1>";
-
-//window
+//---window object
 // console.log(window);
-// console.log(document);
-// console.log(window.document);
-// console.log(window.innerWidth);
-// console.log(window.innerHeight);
-// window.alert("Merhaba");
-// console.log(window.location.href);
+// alert("Merhaba!");
+// console.log(prompt("Adınızı girin:"));
+// console.log(confirm("Silmek istediğinize emin misiniz?"));
 
-// Element Seçimi-Tag
-// let h1=document.getElementsByTagName("h1");
-// console.log(h1);
-// console.log(h1[0]);
-// console.log(h1[0].innerText);
+//---navigator object
+// console.log(navigator.userAgent);
+// console.log(navigator.language);
+// console.log(navigator.onLine);
 
-// Element Seçimi-Id
-// let h2=document.getElementById("title");
-// console.log(h2);
-// console.log(h2.innerText);
-// console.log(h2.innerHTML);
+//---location object
+// console.log(location.href);
+// location.href="https://www.google.com";
+// console.log(location.hostname);
+// console.log(location.pathname);
+// console.log(location.search);
+// const params=new URLSearchParams(location.search);
+// console.log(params.get("id"));
+// console.log(params.get("kategori"));
+// console.log(location.hash);
+// location.reload();
 
-// Element Seçimi-Class
-// let country=document.getElementsByClassName("country");
-// console.log(country);
-// console.log(country[0]);
-
-// Element Seçimi-QuerySelector
-// let htmlElement=document.querySelector("h2");
-// console.log(htmlElement);
-// htmlElement=document.querySelector("#title");
-// console.log(htmlElement);
-// htmlElement=document.querySelector("p");
-// console.log(htmlElement);
-// htmlElement=document.querySelector(".content");
-// console.log(htmlElement);
-// htmlElement=document.querySelectorAll(".content");
-// console.log(htmlElement);
-
-// htmlElement.forEach(element => {
-//     console.log(element.innerText);
-// });
-
-//Element Ekleme, Silme ve Güncelleme
-// let newP=document.createElement("p");
-// newP.innerText="Bu yeni eklenen bir paragraftır!";
-// document.body.appendChild(newP);
-// console.log(newP.innerText);
-// newP.innerText="Güncellendi";
-// console.log(newP.innerText);
-// newP.innerHTML="<span>Deneme</span>";
-// console.log(newP.innerHTML);
-// console.log(newP.innerText);
-
-// newP.remove();
-
-//Event Listener'lar ile Etkileşim
-// document.getElementsByTagName("button")[0];
-let button=document.querySelector("button");
-
-// button.addEventListener("click",function(){
-
-//     document.getElementsByTagName("h1")[0].innerText="Merhaba İstanbul!";
-
-// });
-
-button.addEventListener("click",buttonClick);
-
-button.addEventListener("mouseover",function(){
-
-    document.getElementsByTagName("h1")[0].innerText="Merhaba Türkiye!";
-    this.removeEventListener("click",buttonClick);
-});
-
-function buttonClick(){
-    document.getElementsByTagName("h1")[0].innerText="Merhaba İstanbul!";
+function gotourl(){
+     location.assign("https://www.google.com");
+    // location.replace("https://www.google.com");
 }
+
+
+//---history object
+function back(){
+    // history.back();
+    history.go(-1);
+}
+function forward(){
+    // history.forward();    
+    history.go(1);
+}
+console.log(history.length);
+
+//---screen object
+console.log(screen.width);
+console.log(screen.height);
+console.log(screen.availHeight);
+console.log(screen.availWidth);
+console.log(screen.colorDepth);
+console.log(screen.pixelDepth);
+
+console.log(window.innerHeight);
+console.log(window.innerWidth);
