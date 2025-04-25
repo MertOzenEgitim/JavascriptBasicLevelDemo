@@ -1,50 +1,45 @@
-//---window object
-// console.log(window);
-// alert("Merhaba!");
-// console.log(prompt("Adınızı girin:"));
-// console.log(confirm("Silmek istediğinize emin misiniz?"));
 
-//---navigator object
-// console.log(navigator.userAgent);
-// console.log(navigator.language);
-// console.log(navigator.onLine);
+const form=document.getElementById("registerForm");
 
-//---location object
-// console.log(location.href);
-// location.href="https://www.google.com";
-// console.log(location.hostname);
-// console.log(location.pathname);
-// console.log(location.search);
-// const params=new URLSearchParams(location.search);
-// console.log(params.get("id"));
-// console.log(params.get("kategori"));
-// console.log(location.hash);
-// location.reload();
+const fullNameInput=document.getElementById("fullName");
+const citySelect=document.getElementById("city");
 
-function gotourl(){
-     location.assign("https://www.google.com");
-    // location.replace("https://www.google.com");
+form.addEventListener('submit',function(e){
+    e.preventDefault();
+
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const age = parseInt(document.getElementById('age').value, 10);
+    const city = document.getElementById('city').value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const terms = document.getElementById('terms').checked;
+
+    const message=document.getElementById("message");
+
+    if(fullName.length<2){
+        message.innerHTML="İsim alanını doldurunuz.<br>";
+    }
+
+    if(!isValidEmail(email)){
+        message.innerHTML+="Geçerli bir e-posta adresi yazınız.";
+    }
+
+    console.log(fullName,email,age,city,gender,terms);
+});
+
+function control(){
+    form.classList.add("submited");
 }
 
+function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
 
-//---history object
-function back(){
-    // history.back();
-    history.go(-1);
-}
-function forward(){
-    // history.forward();    
-    history.go(1);
-}
-console.log(history.length);
+// fullNameInput.addEventListener("input",function(){
+// console.log("Yazılan İsim:",fullNameInput.value);
+// });
 
-//---screen object
-console.log(screen.width);
-console.log(screen.height);
-console.log(screen.availHeight);
-console.log(screen.availWidth);
-console.log(screen.colorDepth);
-console.log(screen.pixelDepth);
-
-console.log(window.innerHeight);
-console.log(window.innerWidth);
+// citySelect.addEventListener("change",function(){
+//     console.log("Seçilen Şehir:",citySelect.value);
+// });

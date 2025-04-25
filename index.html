@@ -3,13 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browser Object Model (BOM)</title>
+    <title>Formlar ve Temel Olay Yönetimi</title>
+    <style>
+        .submited input#fullName:invalid{
+            border: 1px solid red;
+        }
+        input#fullName:valid{
+            border: 1px solid green;
+        }
+    </style>
 </head>
 <body>
     
-    <button onclick="gotourl()">Adrese Git</button>
-    <button onclick="back()">Geri Git</button>
-    <button onclick="forward()">İleri Git</button>
+    <h2>Kayıt Formu</h2>
+
+   <form id="registerForm">
+      <label for="fullName">Ad Soyad:</label>
+      <input type="text" id="fullName" name="fullName" required minlength="2" />
+    
+      <label for="email">E-posta:</label>
+      <input type="email" id="email" name="email" required />
+    
+      <label for="age">Yaş:</label>
+      <input type="number" id="age" name="age" required min="18" max="99" />
+    
+      <label for="city">Şehir:</label>
+      <select id="city" name="city" required>
+        <option value="">-- Şehir seçin --</option>
+        <option value="34">İstanbul</option>
+        <option value="06">Ankara</option>
+        <option value="35">İzmir</option>
+      </select>
+
+      <fieldset>
+        <legend>Cinsiyet:</legend>
+        <label>
+          <input type="radio" name="gender" value="0" required checked/>
+          Erkek
+        </label>
+        <label>
+          <input type="radio" name="gender" value="1" required />
+          Kadın
+        </label>
+      </fieldset>
+    
+      <label>
+        <input type="checkbox" id="terms" required />
+        Koşulları kabul ediyorum
+      </label>
+    
+      <button type="submit" onclick="control()">Kayıt Ol</button>
+    </form> 
+
+    <!-- <form id="registerForm">
+        <label for="fullName">Ad Soyad:</label>
+        <input type="text" id="fullName" name="fullName"/>
+      
+        <label for="email">E-posta:</label>
+        <input type="email" id="email" name="email" />
+      
+        <label for="age">Yaş:</label>
+        <input type="number" id="age" name="age"/>
+      
+        <label for="city">Şehir:</label>
+        <select id="city" name="city">
+          <option value="">-- Şehir seçin --</option>
+          <option value="34">İstanbul</option>
+          <option value="06">Ankara</option>
+          <option value="35">İzmir</option>
+        </select>
+  
+        <fieldset>
+          <legend>Cinsiyet:</legend>
+          <label>
+            <input type="radio" name="gender" value="0" checked/>
+            Erkek
+          </label>
+          <label>
+            <input type="radio" name="gender" value="1" />
+            Kadın
+          </label>
+        </fieldset>
+      
+        <label>
+          <input type="checkbox" id="terms" />
+          Koşulları kabul ediyorum
+        </label>
+      
+        <button type="submit">Kayıt Ol</button>
+      </form> -->
+    
+    <!-- Geri Bildirim Alanı -->
+    <div id="message" style="margin-top: 1rem; color: red;"></div>
 
     <script src="index.js"></script>
 </body>

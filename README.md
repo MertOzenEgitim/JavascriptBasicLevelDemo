@@ -83,3 +83,9 @@
 * * `History:` Geçmişte gezinme, ileri/geri butonları
 * * `Screen:` Ekran bilgileri
 
+## 10.Formlar ve Temel Olay Yönetimi
+* Form Elemanları:
+* * Form inputları, validasyon, veri alma
+* Event Handling:
+* * Input, submit, change eventleri
+
