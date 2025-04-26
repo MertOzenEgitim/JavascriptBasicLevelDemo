@@ -1,45 +1,44 @@
+const now=new Date();
+console.log(now);
 
-const form=document.getElementById("registerForm");
+const specificDate=new Date(2025,3,28);
+console.log(specificDate);
 
-const fullNameInput=document.getElementById("fullName");
-const citySelect=document.getElementById("city");
+const fromStringDate=new Date('2025-04-27T15:00:00');
+console.log(fromStringDate);
 
-form.addEventListener('submit',function(e){
-    e.preventDefault();
+//Temel Metotlar
+const today=new Date();
+console.log(today.getDate());
+console.log(today.getMonth());
+console.log(today.getTime());
+console.log(today.getFullYear());
 
-    const fullName = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const age = parseInt(document.getElementById('age').value, 10);
-    const city = document.getElementById('city').value;
-    const gender = document.querySelector('input[name="gender"]:checked').value;
-    const terms = document.getElementById('terms').checked;
+fromStringDate.setHours(17);
+console.log(fromStringDate);
+fromStringDate.setHours(17,55,10);
+console.log(fromStringDate);
+fromStringDate.setMinutes(45);
+fromStringDate.setSeconds(50);
+fromStringDate.setMilliseconds(40);
+console.log(fromStringDate);
 
-    const message=document.getElementById("message");
+fromStringDate.setDate(15);
+console.log(fromStringDate);
+fromStringDate.setMonth(0);
+console.log(fromStringDate);
+fromStringDate.setFullYear(2030);
+console.log(fromStringDate);
 
-    if(fullName.length<2){
-        message.innerHTML="İsim alanını doldurunuz.<br>";
-    }
+function formatDate(date){
+    const day=date.getDate().toString().padStart(2,'0');
+    const month=(date.getMonth()+1).toString().padStart(2,'0');
+    const year=date.getFullYear();
 
-    if(!isValidEmail(email)){
-        message.innerHTML+="Geçerli bir e-posta adresi yazınız.";
-    }
-
-    console.log(fullName,email,age,city,gender,terms);
-});
-
-function control(){
-    form.classList.add("submited");
+    return `${day}.${month}.${year}`;
 }
 
-function isValidEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  }
+console.log(formatDate(today));
 
-// fullNameInput.addEventListener("input",function(){
-// console.log("Yazılan İsim:",fullNameInput.value);
-// });
-
-// citySelect.addEventListener("change",function(){
-//     console.log("Seçilen Şehir:",citySelect.value);
-// });
+console.log(today.toLocaleDateString());
+console.log(today.toLocaleTimeString());
